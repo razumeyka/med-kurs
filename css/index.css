@@ -1,0 +1,493 @@
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSans-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/PTSans-Regular.woff') format('woff'), url('../fonts/PTSans-Regular.ttf')  format('truetype'), url('../fonts/PTSans-Regular.svg#PTSans-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSans-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/PTSans-Bold.woff') format('woff'), url('../fonts/PTSans-Bold.ttf')  format('truetype'), url('../fonts/PTSans-Bold.svg#PTSans-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSans-Italic.eot?#iefix') format('embedded-opentype'),  url('../fonts/PTSans-Italic.woff') format('woff'), url('../fonts/PTSans-Italic.ttf')  format('truetype'), url('../fonts/PTSans-Italic.svg#PTSans-Italic') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PTSerif';
+  src: url('../fonts/PTSerif-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/PTSerif-Regular.woff') format('woff'), url('../fonts/PTSerif-Regular.ttf')  format('truetype'), url('../fonts/PTSerif-Regular.svg#PTSerif-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+	margin:0;
+	padding: 0;
+	font-family: 'PTSans', sans-serif;
+	font-size: 15px;
+	line-height:1.4;
+    letter-spacing: 0.05em;
+	color: rgb(0, 0, 94);
+	min-width: 360px;
+}
+
+button,input,select,textarea{
+    font-family: 'PTSans'; 
+    font-size: 17px;
+}
+
+.wrapper {
+    max-width:1160px;
+    padding:0 40px;
+    margin:0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex_between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*header*/
+
+header {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.header1 {
+    background: rgb(255,255,255);
+    background: linear-gradient( 0deg, rgb(228,228,228) 0%, rgb(255,255,255) 64%, rgb(255,255,255) 100%);
+}
+
+.logo {
+    display: block;
+    background: url(../images/logo.svg) no-repeat center;
+    width: 120px;
+    height: 120px;
+}
+
+.institute__name {
+    font: 400 18px "PTSerif";
+    font-style: italic;
+    max-width: 300px;
+    margin: auto 0 auto 30px;
+}
+
+.contacts__column {
+    display: inline-block;
+    margin: auto 0;
+    font-size: 17px;
+    letter-spacing: 0.1px;
+}
+
+.contacts__mail {
+    display: block;
+    color: rgb(0, 0, 94);
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.contacts__line {
+    background: rgb(0, 0, 115);
+    width: 1px;
+    height: 99px;
+    margin: auto 30px;
+}
+
+.contacts__number {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(0, 0, 94);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.header2 {
+    background: rgb(0,0,94);
+    background: linear-gradient( 0deg, rgb(0,0,94) 0%, rgb(0,0,130) 100%);
+}
+
+.menu {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+.menu a {
+    display: inline-block;   
+    font-size: 18px;;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 20px 18px;
+}
+
+.menu li:first-child a {
+    padding: 20px 18px 20px 0;
+}
+
+header .sub-menu {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 52px;
+    left: 0;
+    display: none;
+}
+
+header .menu li:hover .sub-menu {
+    display: block;
+}
+
+header .submenu li {
+    position: relative;
+    transition: all .2s linear 0s;
+}
+
+header .submenu li a {
+    position: relative;
+    background-color: #ffffff;
+    width: 90px;
+    font-size: 18px;;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+}
+
+.search {
+    margin: auto 0;
+    position: relative;
+}
+
+.search__icon {
+    background: url(../images/sprites.svg) no-repeat -1px -1px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+}
+
+.search__input {
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: rgb(228, 228, 228);
+    box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+    width: 249px;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 45px;
+}
+
+
+/*burger*/
+
+.burger {
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    top: 9px;
+    cursor: pointer;
+}
+
+.burger span, .burger span::before, .burger span::after {
+    display: block;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 3px;
+    width: 30px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.burger span::before {
+    content: '';
+    left: 0;
+}
+
+.burger span::after {
+    content: '';
+    left: 0;
+    top: 20px;
+}
+
+.burger.active span {
+    background-color: transparent;
+}
+    
+ .burger.active span::before  {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+ .burger.active span::after  {
+    transform: rotate(-45deg);
+    top: 8px;
+} 
+
+/*slider*/
+
+
+
+
+/*courses*/
+
+.courses {
+    background: #f7f7f7;
+}
+
+.courses__inner {
+    margin: 0 -25px;
+}
+
+.list__caption {
+    font: 400 22px "PTSerif";
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+}
+
+.list {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 40px 25px 32px;
+}
+
+.list:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.list ul {
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.list ul li {
+    list-style: none;
+}
+
+.list__item {
+    display: block;
+    font-size: 16px;
+    text-decoration: underline;
+    color: rgb(0, 0, 94);
+    padding: 5px 0;
+}
+
+.button {
+    display:inline-block;
+    box-sizing: border-box;
+    background: rgb(0, 0, 94);
+    border: 2px solid rgb(0, 0, 74);
+    width: 100%;
+    height: 50px;
+    font: 700 16px/50px "PTSans";
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+}
+
+.list__button {
+    display: none;
+}
+
+.list:hover .list__button {
+    display: inline-block;
+}
+
+/*info*/
+
+.info {
+    padding: 50px 0 40px;
+}
+
+.info__caption {
+    font: 400 24px "PTSerif";
+    color: rgb(0, 0, 0);
+    margin: 0 0 18px;
+}
+
+.info__text {
+    font-size: 14px;
+    color: rgb(48, 48, 48);
+    line-height: 1.5;
+}
+
+/*footer*/
+
+.footer1 {
+    background: rgb(0,0,94);
+    background: linear-gradient( 90deg, rgb(0,0,94) 0%, rgb(0,0,130) 100%);
+    padding: 43px 0;
+}
+
+.short__name{
+    font: 400 22px "PTSerif";
+    color: rgb(255, 255, 255);
+    margin-bottom: 17px;
+}
+
+.full__name {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    max-width: 470px;
+}
+
+.contacts_footer, .contacts__number_footer, .contacts__mail_footer {
+    color: rgb(255,255,255);
+}
+
+.contacts__line_footer {
+    background: rgb(255, 255, 255);
+}
+
+.footer2 {
+    background: rgb(0, 0, 77);
+    overflow: hidden;
+}
+
+footer .menu li {
+    position: relative;
+}
+
+footer .menu li:before {
+    content: "";
+    background-color: rgb(255, 255, 255);
+    width: 1px;
+    height: 22px;
+    position: absolute;
+    right: 0;
+    top: 17px;
+}
+
+footer .menu a {
+    padding: 13px 18px;
+}
+
+footer .menu li:first-child a {
+    padding: 13px 18px 13px 0;
+}
+
+/*Coin Slider jQuery plugin CSS styles*/
+
+.coin-slider { 
+    zoom: 1; 
+    position: relative; 
+}
+
+.coin-slider a{ 
+    text-decoration: none; 
+    outline: none; 
+}
+
+.coin-slider a img {
+    width: 1200px;
+}
+
+.cs-buttons { 
+    font-size: 0px; 
+    float: left; 
+    position: absolute;
+    bottom: 35px;
+    z-index: 1;
+}
+
+.cs-buttons a { 
+    display: block;
+    float: left; 
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    text-indent: -1000px; 
+    margin: 0 5px; 
+}
+
+.cs-buttons a.cs-active { 
+    background: rgb(0, 0, 94);
+}
+
+.cs-active { 
+    background-color: rgb(255, 255, 255); 
+    color: #FFFFFF; 
+}
+
+.cs-title { 
+    display: flex;
+    justify-content: center;
+    position: absolute; 
+    top: 72px; 
+    left: 93px; 
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    max-width: 862px;
+    padding: 25px 0;
+    z-index: 1000;
+}
+
+.date {    
+    font: 700 60px "PTSans";
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 55px 0 50px;
+}
+
+.month {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.time {
+    font-size: 36px;
+}
+
+.event {
+    font: 400 36px "PTSerif";
+    letter-spacing: 1px;
+    max-width: 412px;
+    border-left: 3px solid rgb(0, 0, 94);
+    padding: 28px 50px;
+    margin: auto 0;
+}
+
+.cs-prev, 
+.cs-next { 
+    display: none;
+}
+
+}
+
+
+
+
+
+
+
