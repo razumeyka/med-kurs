@@ -4,14 +4,28 @@ $(document).ready(function(){
     
     $('.burger').click( function() { 
         $('header .menu').slideToggle(300);
-        $('.burger').toggleClass( 'burger_active' ); 
+        $('.burger').toggleClass('burger_active'); 
     });
+    
+// sub-menu 1024
+    
+    if ( $(window).width() > 1023 ) {
+        $('.menu li').mouseenter(function () { 
+            $(this).find('.sub-menu').fadeIn(200).addClass('active'); 
+        });
 
-// sub-menu 
+        $('.menu li').mouseleave(function () { 
+            $(this).find('.sub-menu').fadeOut(200).removeClass('active'); 
+        });
+    };
 
-     $('.menu li').click(function(e){
-        e.preventDefault();
-        $(this).find('.sub-menu').slideToggle(300);
+// sub-menu 1023
+
+    $('.menu li.menu-item-has-children>a').click(function(e){
+        if($('.burger').is(':visible')){
+            e.preventDefault();
+            $(this).closest('li').find('.sub-menu').slideToggle(300);
+        }
     });  
     
 // slider     
