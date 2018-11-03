@@ -31,9 +31,7 @@ $(document).ready(function(){
 // slider     
     
     $('#coin-slider').coinslider({
-        width: 1230,
         height: 400,
-        opacity: 1,
     });
     
 });
