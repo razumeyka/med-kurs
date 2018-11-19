@@ -257,23 +257,81 @@ header {
 
 /*slider*/
 
-.date {    
+.slider {
+    position:relative;
+    height:400px;
+}
+
+.slider .slide{
+    width: 100%;
+    height: 100%;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0;
+	transition:opacity 0.3s linear 0s;
+}
+
+.slider .slide.active{
+	opacity:1;
+}
+
+.slider .controls { 
+    width: 60px;
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 1;
+}
+
+.slider .controls li { 
+    display: block;
+    float: left; 
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    text-indent: -1000px; 
+    margin: 0 5px; 
+}
+
+.slider .controls li.active { 
+    background: rgb(0, 0, 94);
+}
+
+.slider__text { 
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    max-width: 810px;
+    width: 100%;
+    padding: 25px;
+    margin-top: 70px;
+}
+
+.text__date {    
     font: 700 60px "PTSans";
     text-transform: uppercase;
     text-align: center;
-    padding: 0 55px 0 50px;
+    padding: 0 55px 0 25px;
 }
 
-.month {
+.text__month {
     font-size: 32px;
     margin-bottom: 10px;
 }
 
-.time {
+.text__time {
     font-size: 36px;
 }
 
-.event {
+.text__event {
+    flex: 1;
     font: 400 36px "PTSerif";
     letter-spacing: 1px;
     max-width: 412px;
@@ -527,6 +585,21 @@ footer .menu li:first-child a {
 }
 
 @media screen and (max-width: 767px) {
+    .slider {
+        height: 630px;
+    }
+    
+    .slider__text {
+        flex-direction: column;
+    }
+    
+    .text__event {
+        border-left: none;
+        border-top: 3px solid rgb(0, 0, 94);
+        margin: 15px auto 0;
+        padding: 20px;
+    }
+    
     .footer2 {
         display: none;
     }
@@ -561,69 +634,6 @@ footer .menu li:first-child a {
         margin: 10px 0;
     }
 }
-
-/*Coin Slider jQuery plugin CSS styles*/
-
-.coin-slider { 
-    zoom: 1; 
-    position: relative; 
-}
-
-.coin-slider a{ 
-    text-decoration: none; 
-    outline: none; 
-}
-
-.cs-buttons { 
-    font-size: 0px; 
-    float: left; 
-    position: absolute;
-    bottom: 38px;
-    z-index: 1;
-}
-
-.cs-buttons a { 
-    display: block;
-    float: left; 
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    text-indent: -1000px; 
-    margin: 0 5px; 
-}
-
-.cs-buttons a.cs-active { 
-    background: rgb(0, 0, 94);
-}
-
-.cs-active { 
-    background-color: rgb(255, 255, 255); 
-    color: #FFFFFF; 
-}
-
-.cs-title { 
-    display: flex;
-    position: absolute; 
-    top: 72px; 
-    left: 93px; 
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
-    max-width: 862px;
-    width: 100%;
-    padding: 25px 0;
-    z-index: 1000;
-}
-
-.cs-prev, 
-.cs-next { 
-    display: none;
-}
-
-}
-
 
 
 
